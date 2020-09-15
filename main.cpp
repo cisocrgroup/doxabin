@@ -43,6 +43,7 @@ int parse(int argc, char **argv, args& args) {
 }
 
 int main(int argc, char **argv) {
+  // Handle command line args.
   struct args args = {nullptr, nullptr, 0.2, 75};
   if (parse(argc, argv, args) != 0) {
     std::cerr << "Usage: " << argv[0] << "[Options] IN OUT\n";
@@ -51,17 +52,15 @@ int main(int argc, char **argv) {
     std::cerr << " -w n\tset w (default: 75)\n";
     return EXIT_FAILURE;
   }
-  // Read image and convert it into gray scale
+
+  // Read image and convert it into gray scale.
   auto img = cv::imread(args.inf);
   cv::Mat graymat;
   cv::cvtColor(img, graymat, cv::COLOR_BGR2GRAY);
   assert(graymat.channels() == 1);
-  // std::vector<Doxa::Pixel8> buf(graymat.begin<Doxa::Pixel8>(), graymat.end<Doxa::Pixel8>());
-  std::vector<Doxa::Pixel8> buf;
-  for (auto i = graymat.begin<Doxa::Pixel8>(); i != graymat.end<Doxa::Pixel8>(); i++) {
-    buf.push_back(*i);
-  }
-  // Binarize the image
+  std::vector<Doxa::Pixel8> buf(graymat.begin<Doxa::Pixel8>(), graymat.end<Doxa::Pixel8>());
+
+  // Binarize the image.
   const auto h = graymat.rows;
   const auto w = graymat.cols;
   const auto image = Doxa::Image::Reference(w, h, buf.data()); // image(w, h, buf.data());
