@@ -4,10 +4,12 @@ Simple binariazation tool that uses the implemenataion of
 the ISauvola algorithm to binarize images.
 
 ## Usage
+```
 doxabin [Options] IN OUT
 Options:
  -k n  set k (default 0.2)
  -w n  set w (default 75)
+```
 
 ## Building
 To build initialize the git submodule, first issue the following
