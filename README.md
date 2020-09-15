@@ -1,7 +1,7 @@
 # doxabin
 Simple binariazation tool that uses the implemenataion of
 [Δoxa](https://github.com/brandonmpetty/Doxa)'s implementation of
-ISauvola algorithm to binarize images.
+the ISauvola algorithm to binarize images.
 
 # Usage
 doxabin [Options] IN OUT
