@@ -46,10 +46,10 @@ int main(int argc, char **argv) {
   // Handle command line args.
   struct args args = {nullptr, nullptr, 0.2, 75};
   if (parse(argc, argv, args) != 0) {
-    std::cerr << "Usage: " << argv[0] << "[Options] IN OUT\n";
+    std::cerr << "Usage: " << argv[0] << " [Options] IN OUT\n";
     std::cerr << "Options:\n";
-    std::cerr << " -k n\tset k (default: 0.2)\n";
-    std::cerr << " -w n\tset w (default: 75)\n";
+    std::cerr << " -k n\tset k-value (default: 0.2)\n";
+    std::cerr << " -w n\tset window size (default: 75)\n";
     return EXIT_FAILURE;
   }
 
@@ -61,9 +61,9 @@ int main(int argc, char **argv) {
   std::vector<Doxa::Pixel8> buf(graymat.begin<Doxa::Pixel8>(), graymat.end<Doxa::Pixel8>());
 
   // Binarize the image.
-  const auto h = graymat.rows;
   const auto w = graymat.cols;
-  const auto image = Doxa::Image::Reference(w, h, buf.data()); // image(w, h, buf.data());
+  const auto h = graymat.rows;
+  const auto image = Doxa::Image::Reference(w, h, buf.data());
   Doxa::Parameters parameters(Doxa::ParameterMap({{"window", args.w}}));
   parameters.Set("k", args.k);
   Doxa::Image binaryImage = Doxa::ISauvola::ToBinaryImage(image, parameters);

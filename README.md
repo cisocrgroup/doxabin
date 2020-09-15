@@ -7,8 +7,8 @@ the ISauvola algorithm to binarize images.
 ```
 doxabin [Options] IN OUT
 Options:
- -k n  set k (default 0.2)
- -w n  set w (default 75)
+ -k n  set k-value (default 0.2)
+ -w n  set window size (default 75)
 ```
 
 ## Building
