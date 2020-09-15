@@ -1,0 +1,6 @@
+[submodule "Doxa"]
+	path = Doxa
+	url = https://github.com/brandonmpetty/Doxa
+[submodule "gsm/Doxa"]
+	path = gsm/Doxa
+	url = https://github.com/brandonmpetty/Doxa
