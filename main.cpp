@@ -1,5 +1,4 @@
 #include <unistd.h>
-// #include <iostream>
 #include <opencv2/opencv.hpp>
 // local includes in gsm/Doxa
 #include "Doxa/Image.hpp"
