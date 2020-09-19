@@ -11,14 +11,14 @@ Options:
  -w n  set window size (default 75)
 ```
 
-## Building
-To build initialize the git submodule, first issue the following
-command: `git submodule update --init --recursive`, then compile the
+## Compilation
+To compile, first issue the following command:
+`git submodule update --init --recursive`, then compile the
 program with `make`.
 
 ## Installation
-To build initialize the git submodule, first issue the following
-command: `git submodule update --init --recursive`, then install the
+To install, first issue the following command:
+`git submodule update --init --recursive`, then install the
 program with `make install`.
 
 ## Dependencies
