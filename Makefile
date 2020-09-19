@@ -1,5 +1,6 @@
-CXXFLAGS ?= -std=c++17 -O2 -Werror ${shell pkg-config --cflags opencv4}
-LIBS ?= ${shell pkg-config --libs opencv4}
+OPENCV ?= opencv4
+CXXFLAGS ?= -std=c++17 -O2 -Werror ${shell pkg-config --cflags ${OPENCV}}
+LIBS ?= ${shell pkg-config --libs ${OPENCV}}
 PREFIX ?= /usr/local
 BINDIR ?= ${PREFIX}/bin
 
